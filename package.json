@@ -2,7 +2,7 @@
   "name": "citation-js-playground",
   "version": "1.0.0",
   "scripts": {
-    "citation": "citation-js -i sample.bibtex -f string -s citation-harvard1"
+    "citation": "citation-js -i sample.ris -f string -s citation-apa"
   },
   "dependencies": {
     "citation-js": "^0.5.1"
