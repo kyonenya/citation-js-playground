@@ -24,6 +24,8 @@ Node.jsにおける文献管理
 
 ## 参考
 
-[Citation.js - Docs](https://citation.js.org/api/0.5/)
-
-[Amazon x node.jsで引用文献を管理する方法 - Qiita](https://qiita.com/kannkyo/items/3a95c2625730c6a4db15)
+- [Citation.js - Docs](https://citation.js.org/api/0.5/)
+- [Tutorial: Output Plugins - Docs - Citation.js](https://citation.js.org/api/0.5/tutorial-output_plugins.html)
+  - カスタムフォーマッタ？"To add your own output formats, or to extend existing ones, see Output Plugins."
+  - 旧READMEの方が詳しい？ [Output Plugins - Docs - Citation.js](https://citation.js.org/api/0.3/tutorial-output_plugins.html)
+- [Amazon x node.jsで引用文献を管理する方法 - Qiita](https://qiita.com/kannkyo/items/3a95c2625730c6a4db15)

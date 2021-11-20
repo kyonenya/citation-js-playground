@@ -20,3 +20,10 @@ console.dir(example.data[0]);
 //  _graph: [/* */],
 //  id: 'temp_id_2960918811720883'
 //}
+
+console.log(
+  example.format('bibliography', {
+    format: 'html',
+    template: 'apa',
+  })
+);
