@@ -1,0 +1,13 @@
+{
+  "name": "citation-js-playground",
+  "version": "1.0.0",
+  "scripts": {
+    "citation": "citation-js -i sample.bibtex -f string -s citation-harvard1"
+  },
+  "dependencies": {
+    "citation-js": "^0.5.1"
+  },
+  "devDependencies": {
+    "npx": "^10.2.2"
+  }
+}

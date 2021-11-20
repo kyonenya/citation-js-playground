@@ -1,1 +1,29 @@
 Node.jsにおける文献管理
+
+## 引用方式
+
+#### バンクーバー方式
+
+`citation-js -i sample.bibtex -f string -s citation-vancouver`
+
+1. 植村玄輝. 内世界的な出来事としての作用——ブレンターノ・フッサール・ライナッハ. 現象学年報. 2007;(23):109–17. 
+
+
+#### APA方式
+
+`citation-js -i sample.bibtex -f string -s citation-apa`
+
+植村玄輝. (2007). 内世界的な出来事としての作用——ブレンターノ・フッサール・ライナッハ. 現象学年報, 23, 109–117.
+
+
+#### ハーバード方式
+
+`citation-js -i sample.bibtex -f string -s citation-harvard1`
+
+植村玄輝, 2007. 内世界的な出来事としての作用——ブレンターノ・フッサール・ライナッハ. 現象学年報, (23), pp.109–117.
+
+## 参考
+
+[Citation.js - Docs](https://citation.js.org/api/0.5/)
+
+[Amazon x node.jsで引用文献を管理する方法 - Qiita](https://qiita.com/kannkyo/items/3a95c2625730c6a4db15)
