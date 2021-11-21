@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "citation-js": "citation-js -i sample.ris -f string -s citation-apa",
+    "ris": "node ris.js",
     "astrocite": "node astrocite.js"
   },
   "dependencies": {
+    "@customcommander/ris": "^5.1.2",
     "astrocite": "^0.16.4",
     "citation-js": "^0.5.1"
   },

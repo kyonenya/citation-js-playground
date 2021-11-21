@@ -39,6 +39,7 @@ SN  - 0289-825X
 Y1  - 2021
 PB  - 青土社
 TA  - 吉田廉・京念屋隆史
+ER  -
 `);
 
 console.dir(example2.data[0]);
