@@ -1,5 +1,7 @@
 const { read } = require('@customcommander/ris');
 
+const SEPARATOR = ', ';
+
 const result = read(`
 TY  - JOUR
 T1  - ウィトゲンシュタインは誰のための哲学者か
@@ -16,24 +18,41 @@ ER  -
 `)[0];
 
 function formatJp(ris) {
-  return [
-    ris.A1[0].last_name,
-    `（${ris.Y1}）`,
-    `「${ris.T1}」`,
-    `${ris.TA[0].last_name}訳`,
-    ris.PB[0],
-    `${ris.Y1[0]}年`,
+  const array = [
+    { value: ris.A1[0].last_name },
+    { value: ris.Y1[0], modifier: (str) => `（${str}）` },
+    { value: ris.T1[0], modifier: (str) => `「${str}」` },
+    { value: `${ris.TA[0].last_name}訳${SEPARATOR}` },
+    { value: ris.JO[0], modifier: (str) => `『${str}』` },
+    { value: `${ris.IS[0]}: pp. ${ris.SP[0]}-${ris.EP[0]}` },
+    { value: ris.PB[0] },
+    { value: ris.Y1[0] },
   ];
+  
+  const result = array.reduce((acc, val, i) => {
+    if (array[i].modifier || (array[i + 1] && array[i + 1].modifier)) {
+      return [...acc, val];
+    }
+    return [...acc, val, { value: SEPARATOR }];
+  }, []);
+
+  return result.map(v => v.modifier ? v.modifier(v.value) : v.value);
 }
 
-console.log(formatJp(result));
+console.log(formatJp(result).join(''));
+//G・E・M・アンスコム（2021）「ウィトゲンシュタインは誰のための哲学者か」吉田廉・京念屋隆史訳, 『現代思想』50(2): pp. 89-97, 青土社, 2021, 
 //[
 //  'G・E・M・アンスコム',
 //  '（2021）',
 //  '「ウィトゲンシュタインは誰のための哲学者か」',
-//  '吉田廉・京念屋隆史訳',
+//  '吉田廉・京念屋隆史訳, ',
+//  '『現代思想』',
+//  '50(2): pp. 89-97',
+//  ', ',
 //  '青土社',
-//  '2021年'
+//  ', ',
+//  '2021',
+//  ', '
 //]
 
 
