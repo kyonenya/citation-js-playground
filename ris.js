@@ -13,9 +13,31 @@ Y1  - 2021
 PB  - 青土社
 TA  - 吉田廉・京念屋隆史
 ER  -
-`);
+`)[0];
 
-console.log(result[0]);
+function formatJp(ris) {
+  return [
+    ris.A1[0].last_name,
+    `（${ris.Y1}）`,
+    `「${ris.T1}」`,
+    `${ris.TA[0].last_name}訳`,
+    ris.PB[0],
+    `${ris.Y1[0]}年`,
+  ];
+}
+
+console.log(formatJp(result));
+//[
+//  'G・E・M・アンスコム',
+//  '（2021）',
+//  '「ウィトゲンシュタインは誰のための哲学者か」',
+//  '吉田廉・京念屋隆史訳',
+//  '青土社',
+//  '2021年'
+//]
+
+
+//console.log(result[0]);
 //{
 //  TY: [ 'JOUR' ],
 //  T1: [ 'ウィトゲンシュタインは誰のための哲学者か' ],
