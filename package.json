@@ -4,7 +4,8 @@
   "scripts": {
     "citation-js": "citation-js -i sample.ris -f string -s citation-apa",
     "ris": "node ris.js",
-    "astrocite": "node astrocite.js"
+    "astrocite": "node astrocite.js",
+    "test": "mocha"
   },
   "dependencies": {
     "@customcommander/ris": "^5.1.2",
@@ -12,6 +13,7 @@
     "citation-js": "^0.5.1"
   },
   "devDependencies": {
+    "mocha": "^9.1.3",
     "npx": "^10.2.2"
   }
 }
