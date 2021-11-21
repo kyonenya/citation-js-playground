@@ -22,7 +22,6 @@ Node.jsにおける文献管理
 
 植村玄輝. (2007). 内世界的な出来事としての作用——ブレンターノ・フッサール・ライナッハ. 現象学年報, 23, 109–117.
 
-
 #### ハーバード方式
 
 `citation-js -i sample.bibtex -f string -s citation-harvard1`
@@ -31,8 +30,16 @@ Node.jsにおける文献管理
 
 ## 参考
 
+### 書式
+
+- [プロシーディング と学術雑誌－その違いは - 学術英語アカデミー](https://www.enago.jp/academy/conference-publications/)
+- [【研究成果】研究業績　の書き方 | 科研費.com](https://xn--w8yz0bc56a.com/gakushin-publicationlist/)
+- [文献 | 日本社会学会](https://jss-sociology.org/bulletin/guide/document/)
 - [RIS (file format) - Wikipedia](https://en.wikipedia.org/wiki/RIS_(file_format))
 - [翻訳本をMendeleyで入力してBibTeXで使いたいから、Notesに原著情報書くことにした - Drafts](https://cm3.hateblo.jp/entry/2019/01/27/161741#fn-3e192f66)
+
+### 技術
+
 - [Citation.js - Docs](https://citation.js.org/api/0.5/)
 - [Tutorial: Output Plugins - Docs - Citation.js](https://citation.js.org/api/0.5/tutorial-output_plugins.html)
   - カスタムフォーマッタ？"To add your own output formats, or to extend existing ones, see Output Plugins."
