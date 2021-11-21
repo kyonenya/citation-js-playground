@@ -2,6 +2,11 @@
 
 Node.jsにおける文献管理
 
+## 問題
+
+- TA（翻訳著者）がCSLにパースされない
+  - もうRIS形式を正としてパースした方がいいか
+
 ## 引用方式
 
 #### バンクーバー方式
@@ -26,6 +31,8 @@ Node.jsにおける文献管理
 
 ## 参考
 
+- [RIS (file format) - Wikipedia](https://en.wikipedia.org/wiki/RIS_(file_format))
+- [翻訳本をMendeleyで入力してBibTeXで使いたいから、Notesに原著情報書くことにした - Drafts](https://cm3.hateblo.jp/entry/2019/01/27/161741#fn-3e192f66)
 - [Citation.js - Docs](https://citation.js.org/api/0.5/)
 - [Tutorial: Output Plugins - Docs - Citation.js](https://citation.js.org/api/0.5/tutorial-output_plugins.html)
   - カスタムフォーマッタ？"To add your own output formats, or to extend existing ones, see Output Plugins."
