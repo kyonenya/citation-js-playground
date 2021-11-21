@@ -2,9 +2,11 @@
   "name": "citation-js-playground",
   "version": "1.0.0",
   "scripts": {
-    "citation": "citation-js -i sample.ris -f string -s citation-apa"
+    "citation-js": "citation-js -i sample.ris -f string -s citation-apa",
+    "astrocite": "node astrocite.js"
   },
   "dependencies": {
+    "astrocite": "^0.16.4",
     "citation-js": "^0.5.1"
   },
   "devDependencies": {

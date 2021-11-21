@@ -1,3 +1,5 @@
+# citation-js
+
 Node.jsにおける文献管理
 
 ## 引用方式
@@ -29,3 +31,5 @@ Node.jsにおける文献管理
   - カスタムフォーマッタ？"To add your own output formats, or to extend existing ones, see Output Plugins."
   - 旧READMEの方が詳しい？ [Output Plugins - Docs - Citation.js](https://citation.js.org/api/0.3/tutorial-output_plugins.html)
 - [Amazon x node.jsで引用文献を管理する方法 - Qiita](https://qiita.com/kannkyo/items/3a95c2625730c6a4db15)
+- [dsifford/astrocite: Bibliography file format => AST => CSL JSON](https://github.com/dsifford/astrocite)
+  - 日本語著者名のパースに難あり
