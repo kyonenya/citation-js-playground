@@ -20,6 +20,14 @@ Node.jsにおける文献管理
 
 ### CSL
 
+- [#Appendix CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables)
+  - CSL-JSONのspec
+    - サブタイトルはないらしい、なくていい
+    - `original-`系が充実していて翻訳文献にも向いている
+- [CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html)
+  - TODO: `name-as-sort-order`のところをよく読む
+- [schema/csl-data.json at v1.0.1 · citation-style-language/schema](https://github.com/citation-style-language/schema/blob/v1.0.1/csl-data.json)
+  - CSL-JSONのフィールドのリスト
 - [Primer — An Introduction to CSL — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/primer.html)
   - これを一読するだけでCSLのXML書式がつかめる
 - [ja:dev:citation styles:style editing step-by-step [Zotero Documentation]](https://www.zotero.org/support/ja/dev/citation_styles/style_editing_step-by-step)

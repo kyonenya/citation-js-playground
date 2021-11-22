@@ -26,7 +26,7 @@
   </locale>
   <macro name="author">
     <names variable="author" suffix="">
-      <name initialize="false" initialize-with=". " name-as-sort-order="all"/>
+      <name name-as-sort-order="all" sort-separator="・"/>
     </names>
   </macro>
   <macro name="event">
@@ -37,7 +37,7 @@
         <date-part name="month" form="numeric-leading-zeros" suffix="-"/>
         <date-part name="day" form="numeric-leading-zeros"/>
       </date>
-    </group>
+    </tgroup>
   </macro>
   <macro name="title">
     <choose>
@@ -68,19 +68,17 @@
     </names>
   </macro>
   <macro name="translator">
-    <names variable="translator">
-      <name initialize="false" initialize-with=". " name-as-sort-order="all"/>
-      <label form="short" plural="never"/>
+    <names variable="translator" suffix="訳">
+      <name initialize="false" initialize-with=". " name-as-sort-order="all" delimiter="・"/>
     </names>
   </macro>
   <macro name="locators">
-    <group delimiter="">
+    <group delimiter="" suffix=":">
       <group>
-        <text term="volume" form="short" suffix=" "/>
         <text variable="volume"/>
       </group>
       <group>
-        <text variable="issue" suffix=":"/>
+        <text variable="issue" prefix="(" suffix=")"/>
       </group>
     </group>
   </macro>
@@ -158,11 +156,11 @@
         <if type="article-journal">
           <group delimiter="">
             <group delimiter=": ">
-              <text variable="collection-title"/>
+              <!-- <text variable="collection-title"/> -->
               <text macro="title"/>
             </group>
+            <text macro="translator" suffix=", "/>
             <text variable="container-title" prefix="『" suffix="』" />
-            <text macro="translator"/>
             <text macro="locators" suffix=" "/>
             <group delimiter=", ">
               <text macro="page"/>
