@@ -1,6 +1,6 @@
 const assert = require('assert');
 const { read } = require('@customcommander/ris');
-const { formatJpArticle } = require('../ris');
+const { formatJpArticle } = require('./ris');
 
 describe('formatJpArticle', () => {
   it('翻訳論文', () => {
