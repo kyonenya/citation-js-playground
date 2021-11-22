@@ -2,7 +2,7 @@
   "name": "citation-js-playground",
   "version": "1.0.0",
   "scripts": {
-    "citation-js": "citation-js -i sample.ris -f string -s citation-apa",
+    "citation-js": "node citation.js",
     "ris": "node ris.js",
     "astrocite": "node astrocite.js",
     "test": "mocha formatJp.test.js"
