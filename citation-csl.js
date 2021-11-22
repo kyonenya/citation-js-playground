@@ -9,31 +9,19 @@ const config = Cite.CSL.register.addTemplate(templateName, template);
 
 const example = new Cite(`
 TY  - JOUR
-T1  - デリダの正義論：カント倫理学との対質
-A1  - 川谷茂樹
-Y1  - 2009
-PB  - 北海学園大学学術研究会
-ER  - 
+T1  - 考えるとき話しているのか：フッサール「独白」概念をめぐって
+T2  - 
+A1  - 京念屋隆史
+JO  - 現象学年報
+IS  - 37
+SP  - 89
+EP  - 97
+SN  - 0289-825X
+Y1  - 2021
+PB  - 日本現象学会
+ER  -
 `);
-
-const result = example.format('bibliography', {
-  format: 'text',
-  template: templateName,
-  lang: 'en-US'
-});
-console.log(result);
-//(1)川谷茂樹. デリダの正義論：カント倫理学との対質. 2009.
-
-//console.dir(example.data[0]);
-//{
-//  type: 'article-journal',
-//  title: 'デリダの正義論：カント倫理学との対質',
-//  author: [ { literal: '川谷茂樹' } ],
-//  issued: { 'date-parts': [ [ 2009 ] ] },
-//  publisher: '北海学園大学学術研究会',
-//  _graph: [/* */],
-//  id: 'temp_id_2960918811720883'
-//}
+//京念屋隆史「考えるとき話しているのか：フッサール「独白」概念をめぐって」『現象学年報』37: pp. 89–97, 2021.
 
 //console.log(
 //  example.format('bibliography', {
@@ -45,7 +33,7 @@ console.log(result);
 const example2 = new Cite(`
 TY  - JOUR
 T1  - ウィトゲンシュタインは誰のための哲学者か
-A1  - G・E・M・アンスコム
+AU  - G・E・M・アンスコム
 JO  - 現代思想
 IS  - 50(2)
 SP  - 89
@@ -56,6 +44,15 @@ PB  - 青土社
 TA  - 吉田廉・京念屋隆史
 ER  -
 `);
+
+const result = example2.format('bibliography', {
+  format: 'text',
+  template: templateName,
+  lang: 'ja-JP',
+});
+
+console.log(result);
+console.dir(example2.data[0]);
 
 //console.dir(example2.data[0]);
 //{

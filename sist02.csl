@@ -25,7 +25,7 @@
     </terms>
   </locale>
   <macro name="author">
-    <names variable="author" suffix=". ">
+    <names variable="author" suffix="">
       <name initialize="false" initialize-with=". " name-as-sort-order="all"/>
     </names>
   </macro>
@@ -44,15 +44,15 @@
       <if type="chapter report paper-conference article webpage" match="any">
         <choose>
           <if match="any" variable="container-title" type="webpage">
-            <text variable="title" quotes="true"/>
+            <text variable="title" quotes="true" />
           </if>
           <else>
-            <text variable="title"/>
+            <text variable="title" />
           </else>
         </choose>
       </if>
       <else>
-        <text variable="title"/>
+        <text variable="title" prefix="「" suffix="」"/>
       </else>
     </choose>
   </macro>
@@ -74,14 +74,13 @@
     </names>
   </macro>
   <macro name="locators">
-    <group delimiter=", ">
+    <group delimiter="">
       <group>
         <text term="volume" form="short" suffix=" "/>
         <text variable="volume"/>
       </group>
       <group>
-        <text term="issue" form="short" suffix=" "/>
-        <text variable="issue"/>
+        <text variable="issue" suffix=":"/>
       </group>
     </group>
   </macro>
@@ -101,22 +100,22 @@
   <macro name="page">
     <choose>
       <if type="article-journal chapter" match="any">
-        <label plural="never" suffix=". " variable="page" form="short"/>
+        <label suffix=". " variable="page" form="short"/>
         <text variable="page"/>
       </if>
       <else-if type="book thesis" match="any">
         <text variable="number-of-pages"/>
-        <label plural="never" variable="page" form="short"/>
+        <label variable="page" form="short"/>
       </else-if>
       <else-if type="report" match="any">
         <choose>
           <if match="any" variable="container-title">
-            <label plural="never" suffix=". " variable="page" form="short"/>
+            <label suffix=". " variable="page" form="short"/>
             <text variable="number-of-pages"/>
           </if>
           <else>
             <text variable="number-of-pages"/>
-            <label plural="never" variable="page" form="short"/>
+            <label variable="page" form="short"/>
           </else>
         </choose>
       </else-if>
@@ -146,27 +145,28 @@
     </sort>
     <layout delimiter=", " prefix="(" suffix=")">
       <text variable="citation-number"/>
-    </layout>
+      </layout>
   </citation>
   <bibliography entry-spacing="0" second-field-align="flush">
     <sort>
       <key variable="citation-number"/>
     </sort>
     <layout suffix=".">
-      <text variable="citation-number" prefix="(" suffix=")"/>
+      <!-- <text variable="citation-number" prefix="(" suffix=")"/> -->
       <text macro="author"/>
       <choose>
         <if type="article-journal">
-          <group delimiter=". ">
+          <group delimiter="">
             <group delimiter=": ">
               <text variable="collection-title"/>
               <text macro="title"/>
             </group>
-            <text variable="container-title"/>
+            <text variable="container-title" prefix="『" suffix="』" />
+            <text macro="translator"/>
+            <text macro="locators" suffix=" "/>
             <group delimiter=", ">
-              <text macro="issued"/>
-              <text macro="locators"/>
               <text macro="page"/>
+              <text macro="issued"/>
             </group>
           </group>
         </if>

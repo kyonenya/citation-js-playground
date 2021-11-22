@@ -2,10 +2,9 @@
   "name": "citation-js-playground",
   "version": "1.0.0",
   "scripts": {
-    "citation-js": "node citation.js",
-    "ris": "node ris.js",
+    "citation-csl": "node citation-csl.js",
     "astrocite": "node astrocite.js",
-    "test": "mocha formatJp.test.js"
+    "test": "mocha *.test.js"
   },
   "dependencies": {
     "@customcommander/ris": "^5.1.2",
