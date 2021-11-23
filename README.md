@@ -20,6 +20,8 @@ Node.jsにおける文献管理
 
 ### citeproc-js
 
+- [citeproc-js/citeproc-doc.rst at master · Juris-M/citeproc-js](https://github.com/Juris-M/citeproc-js/blob/master/attic/citeproc-doc.rst#processor-modes)
+  - こっちのドキュメントの方が見やすい
 - [locales/locales-ja-JP.xml at master · citation-style-language/locales](https://github.com/citation-style-language/locales/blob/master/locales-ja-JP.xml)
 - [Running the Processor — citeproc-js 1.1.73 documentation](https://citeproc-js.readthedocs.io/en/latest/running.html)
 - [fiduswriter/citeproc-plus: Citeproc-js + citation styles bundled](https://github.com/fiduswriter/citeproc-plus#readme)
