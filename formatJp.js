@@ -1,15 +1,12 @@
-const { read } = require('@customcommander/ris');
+const { read } = require("@customcommander/ris");
 
-const SEPARATOR = ', ';
+const SEPARATOR = ", ";
 
 function formatJpArticle(ris) {
   const fragments = [
     ris.A1[0].last_name,
-    [
-      ris.T1[0] + (ris.T2 ? `：${ris.T2[0]}` : ''),
-      (str) => `「${str}」`,
-    ],
-    ris.TA ? `${ris.TA[0].last_name}訳${SEPARATOR}` : '',
+    [ris.T1[0] + (ris.T2 ? `：${ris.T2[0]}` : ""), (str) => `「${str}」`],
+    ris.TA ? `${ris.TA[0].last_name}訳${SEPARATOR}` : "",
     [ris.JO[0], (str) => `『${str}』`],
     `${ris.IS[0]}: pp. ${ris.SP[0]}-${ris.EP[0]}`,
     ris.PB[0],
@@ -17,13 +14,17 @@ function formatJpArticle(ris) {
   ];
 
   const separated = fragments.reduce((acc, val, i) => {
-    if (!Array.isArray(val) && (fragments[i + 1] && !Array.isArray(fragments[i + 1]))) {
-      return [...acc, val, SEPARATOR ];
+    if (
+      !Array.isArray(val) &&
+      fragments[i + 1] &&
+      !Array.isArray(fragments[i + 1])
+    ) {
+      return [...acc, val, SEPARATOR];
     }
     return [...acc, val];
   }, []);
 
-  return separated.map(v => Array.isArray(v) ? v[1](v[0]) : v);
+  return separated.map((v) => (Array.isArray(v) ? v[1](v[0]) : v));
 }
 
 //{
