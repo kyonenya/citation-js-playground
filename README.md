@@ -18,6 +18,19 @@ Node.jsにおける文献管理
 
 ## 参考
 
+### citeproc-js
+
+- [locales/locales-ja-JP.xml at master · citation-style-language/locales](https://github.com/citation-style-language/locales/blob/master/locales-ja-JP.xml)
+- [Running the Processor — citeproc-js 1.1.73 documentation](https://citeproc-js.readthedocs.io/en/latest/running.html)
+- [fiduswriter/citeproc-plus: Citeproc-js + citation styles bundled](https://github.com/fiduswriter/citeproc-plus#readme)
+- [Demo: Standalone Bibliography — citeproc-js 1.1.73 documentation](https://citeproc-js.readthedocs.io/en/latest/deployments.html)
+
+#### 実装参考
+
+- [citeproc-js-node - npm](https://www.npmjs.com/package/citeproc-js-node?activeTab=readme)
+  - sysオブジェクト・ロケールの取得
+- [kcite/kcite.js at 8697933fdb1c908a8d50ab9eafc968a719b46009 · phillord/kcite](https://github.com/phillord/kcite/blob/8697933fdb1c908a8d50ab9eafc968a719b46009/kcite-citeproc/kcite.js)
+
 ### CSL
 
 - [Appendix CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables)
