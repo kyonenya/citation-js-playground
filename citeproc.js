@@ -7,7 +7,7 @@ const fs = require("fs");
  */
 const items = {
   "14058/RN9M5BF3": {
-    accessed: { month: "9", year: "2010", day: "10" },
+    issued: { month: "9", year: "2010", day: "10" },
     id: "14058/RN9M5BF3",
     author: [
       { given: "Adel", family: "Hendaoui" },
@@ -38,11 +38,7 @@ const items = {
         family: "京念屋",
       },
     ],
-    issued: [
-      {
-        "date-parts": [ 2021, 1, 1 ]
-      }
-    ],
+    issued: { year: 2021, month: 1 },
     "container-title": "現代思想",
     volume: "50",
     issue: "2",
@@ -73,3 +69,5 @@ citeproc.updateItems(Object.keys(items));
 const bib = citeproc.makeBibliography();
 
 console.log(bib[1]);
+
+//console.log(citeproc.registry.getSortedRegistryItems()[1].ref);
