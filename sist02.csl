@@ -31,25 +31,19 @@
   </macro>
   <macro name="event">
     <group delimiter=", ">
+      <text variable="event"/>
       <text variable="event-place"/>
-      <date variable="event-date">
-        <date-part name="year" suffix="-"/>
-        <date-part name="month" form="numeric-leading-zeros" suffix="-"/>
+      <date variable="event-date" delimiter="-">
+        <date-part name="year"/>
+        <date-part name="month" form="numeric-leading-zeros"/>
         <date-part name="day" form="numeric-leading-zeros"/>
       </date>
-    </tgroup>
+    </group>
   </macro>
   <macro name="title">
     <choose>
-      <if type="chapter report paper-conference article webpage" match="any">
-        <choose>
-          <if match="any" variable="container-title" type="webpage">
-            <text variable="title" quotes="true" />
-          </if>
-          <else>
-            <text variable="title" />
-          </else>
-        </choose>
+      <if type="book" match="any">
+        <text variable="title" prefix="『" suffix="』"/>
       </if>
       <else>
         <text variable="title" prefix="「" suffix="」"/>
@@ -60,12 +54,6 @@
     <date variable="issued">
       <date-part name="year"/>
     </date>
-  </macro>
-  <macro name="editor">
-    <names variable="editor">
-      <name initialize="false" initialize-with=". " name-as-sort-order="all"/>
-      <label form="short" plural="never"/>
-    </names>
   </macro>
   <macro name="translator">
     <names variable="translator" suffix="訳">
@@ -86,9 +74,13 @@
     <group>
       <choose>
         <if type="article-journal" match="any">
-          <text value="[全文リンク]"/>
+          <text value="[PDF]"/>
         </if>
+        <else-if type="paper-conference" match="any">
+          <text value="[要旨]"/>
+        </else-if>
         <else>
+          <text value="[リンク]"/>
         </else>
       </choose>
       <text variable="URL" prefix="(" suffix=")"/>
@@ -101,7 +93,7 @@
           <date-part name="day" form="numeric-leading-zeros"/>
         </date>
       </group>
-      -->
+      -->      
     </group>
   </macro>
   <macro name="page">
@@ -140,6 +132,12 @@
       </else>
     </choose>
   </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <name initialize="false" initialize-with=". " name-as-sort-order="all"/>
+      <label form="short" plural="never"/>
+    </names>
+  </macro>
   <macro name="publisher">
     <group delimiter=", ">
       <text variable="publisher-place"/>
@@ -165,7 +163,7 @@
         <if type="article-journal">
           <group>
             <group delimiter=": ">
-              <text variable="collection-title"/>
+              <!-- <text variable="collection-title"/> -->
               <text macro="title"/>
             </group>
             <text macro="translator" suffix=", "/>
@@ -177,6 +175,22 @@
             </group>
           </group>
         </if>
+        <else-if type="paper-conference" match="any">
+          <group>
+            <text macro="title"/>
+            <!-- <text variable="container-title"/> -->
+            <!-- <text macro="editor"/> -->
+            <text macro="event"/>
+            <!--            
+            <group delimiter=", ">
+              <text macro="publisher"/>
+              <text macro="issued"/>
+              <text macro="page"/>
+              <text variable="collection-title" prefix="(" suffix=")"/>
+            </group>
+            -->
+          </group>
+        </else-if>
         <else-if type="book" match="any">
           <group delimiter=". ">
             <text macro="title"/>
@@ -229,20 +243,6 @@
             </group>
           </group>
         </else-if>
-        <else-if type="paper-conference" match="any">
-          <group delimiter=". ">
-            <text macro="title"/>
-            <text variable="container-title"/>
-            <text macro="editor"/>
-            <text macro="event"/>
-            <group delimiter=", ">
-              <text macro="publisher"/>
-              <text macro="issued"/>
-              <text macro="page"/>
-              <text variable="collection-title" prefix="(" suffix=")"/>
-            </group>
-          </group>
-        </else-if>
         <else-if type="patent" match="any">
           <group delimiter=". ">
             <text macro="title"/>
@@ -256,6 +256,7 @@
             <text variable="container-title"/>
           </group>
         </else-if>
+        <!--
         <else-if type="article" match="any">
           <group delimiter=". ">
             <text macro="title"/>
@@ -267,6 +268,7 @@
             </group>
           </group>
         </else-if>
+        -->
         <else>
           <group delimiter=". ">
             <text macro="title"/>
@@ -275,7 +277,10 @@
         </else>
       </choose>
       <text value="."/>
-      <text macro="access" prefix=" "/>
+      <group delimiter=" " prefix=" ">
+        <text macro="access"/>
+        <text variable="note"/>
+      </group>
     </layout>
   </bibliography>
 </style>

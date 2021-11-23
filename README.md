@@ -2,38 +2,21 @@
 
 Node.jsにおける文献管理
 
-## citation-jsの問題
-
-### TA（翻訳著者）のパース
-
-- TA（翻訳著者）がCSL-JSONにパースされない
-  - もうRIS形式を正としてパースした方がいいか
-- 正確には「TAは主著者（author）に、AUが原著者（original-author）にパースされる」という仕様
-  - [citation-js/new.json at main · citation-js/citation-js](https://github.com/citation-js/citation-js/blob/main/packages/plugin-ris/src/spec/new.json)
-  - これは不都合、普通に書くと訳者が先頭に来てしまう
-- もうCSL-JSON形式を正として、変換全般をやめた方がいいか
-  - 案外CSLが使いやすいので、データの方も最初からCSLに寄せておけばいい
-  - T2（サブタイトル）もCSL-JSONにすると欠落する、このように、変換はロスレスではない
-  - ならciteproc-jsも使えるんじゃないか？ 要検討
-
 ## 参考
 
 ### citeproc-js
 
 - [citeproc-js/citeproc-doc.rst at master · Juris-M/citeproc-js](https://github.com/Juris-M/citeproc-js/blob/master/attic/citeproc-doc.rst#processor-modes)
   - こっちのドキュメントの方が見やすい
+- [citeproc-js-node - npm](https://www.npmjs.com/package/citeproc-js-node?activeTab=readme)
+  - sysオブジェクト・ロケールの取得
 - [locales/locales-ja-JP.xml at master · citation-style-language/locales](https://github.com/citation-style-language/locales/blob/master/locales-ja-JP.xml)
 - [Running the Processor — citeproc-js 1.1.73 documentation](https://citeproc-js.readthedocs.io/en/latest/running.html)
 - [fiduswriter/citeproc-plus: Citeproc-js + citation styles bundled](https://github.com/fiduswriter/citeproc-plus#readme)
 - [Demo: Standalone Bibliography — citeproc-js 1.1.73 documentation](https://citeproc-js.readthedocs.io/en/latest/deployments.html)
-
-#### 実装参考
-
-- [citeproc-js-node - npm](https://www.npmjs.com/package/citeproc-js-node?activeTab=readme)
-  - sysオブジェクト・ロケールの取得
 - [kcite/kcite.js at 8697933fdb1c908a8d50ab9eafc968a719b46009 · phillord/kcite](https://github.com/phillord/kcite/blob/8697933fdb1c908a8d50ab9eafc968a719b46009/kcite-citeproc/kcite.js)
 
-### CSL
+### CSL-JSON
 
 - [Appendix CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables)
   - CSL-JSONのspec
@@ -42,14 +25,16 @@ Node.jsにおける文献管理
   - リンクは`URL`のみ
   - ユーザー定義フィールドはない、雑記は`note`に書く
     - noteにリンクとリンクテキストを書きたいときはマークダウン？
-- [CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html)
-  - TODO: `name-as-sort-order`のところをよく読む
 - [schema/csl-data.json at v1.0.1 · citation-style-language/schema](https://github.com/citation-style-language/schema/blob/v1.0.1/csl-data.json)
   - CSL-JSONのフィールドのリスト
+
+## CSL
+
+- [CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html)
+  - TODO: `name-as-sort-order`のところをよく読む
 - [Primer — An Introduction to CSL — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/primer.html)
   - これを一読するだけでCSLのXML書式がつかめる
 - [ja:dev:citation styles:style editing step-by-step [Zotero Documentation]](https://www.zotero.org/support/ja/dev/citation_styles/style_editing_step-by-step)
-  - delimiterやsuffix groupの仕様などが参考になる
 - [Pandocで参考文献が辛い話 (PandocとZoteroで参考文献：余談編)](https://zenn.dev/sky_y/articles/pandoc-advent-2020-bib3)
 - [citation-js/packages/plugin-csl at main · citation-js/citation-js](https://github.com/citation-js/citation-js/tree/main/packages/plugin-csl)
   - カスタムCSLスタイルを用いたformat、APIが古いが
@@ -75,6 +60,20 @@ Node.jsにおける文献管理
 
 - [dsifford/astrocite: Bibliography file format => AST => CSL JSON](https://github.com/dsifford/astrocite)
   - 日本語著者名のパースに難あり
+
+## citation-jsの問題
+
+### TA（翻訳著者）のパース
+
+- TA（翻訳著者）がCSL-JSONにパースされない
+  - もうRIS形式を正としてパースした方がいいか
+- 正確には「TAは主著者（author）に、AUが原著者（original-author）にパースされる」という仕様
+  - [citation-js/new.json at main · citation-js/citation-js](https://github.com/citation-js/citation-js/blob/main/packages/plugin-ris/src/spec/new.json)
+  - これは不都合、普通に書くと訳者が先頭に来てしまう
+- もうCSL-JSON形式を正として、変換全般をやめた方がいいか
+  - 案外CSLが使いやすいので、データの方も最初からCSLに寄せておけばいい
+  - T2（サブタイトル）もCSL-JSONにすると欠落する、このように、変換はロスレスではない
+  - ならciteproc-jsも使えるんじゃないか？ 要検討
 
 ## 引用方式
 

@@ -6,6 +6,18 @@ const fs = require('fs');
  * @url https://github.com/fcheslack/citeproc-js-node
  */
 const items = {
+  conf_id_1838593020252892: {
+    type: 'paper-conference',
+    title: '考えるとき話しているのか——フッサール「独白」概念をめぐって',
+//    'container-title': '現象学年報',
+    author: [{ literal: '京念屋隆史' }],
+    'event-date': { year: 2021, month: 11, day: 3 },
+    event: '日本現象学会2020年度研究大会',
+    'event-place': 'オンライン開催',
+    URL: 'https://kyonenya.github.io/',
+    id: 'conf_id_1838593020252892',
+    note: '[発表原稿](https://kyonenya.github.io/)',
+  },
   temp_id_5858590020652892: {
     type: 'article-journal',
     title: '考えるとき話しているのか：フッサール「独白」概念をめぐって',
@@ -69,6 +81,6 @@ sys.items = items;
 citeproc.updateItems(Object.keys(items));
 const bib = citeproc.makeBibliography();
 
-console.log(bib[1]);
+console.log(bib[1][0]);
 
-//console.log(citeproc.registry.getSortedRegistryItems()[1].ref);
+//console.log(citeproc.registry.getSortedRegistryItems()[0].ref);
