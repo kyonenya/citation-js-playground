@@ -83,8 +83,16 @@
     </group>
   </macro>
   <macro name="access">
-    <group delimiter=", ">
-      <text variable="URL" prefix=" "/>
+    <group>
+      <choose>
+        <if type="article-journal" match="any">
+          <text value="[全文リンク]"/>
+        </if>
+        <else>
+        </else>
+      </choose>
+      <text variable="URL" prefix="(" suffix=")"/>
+      <!--
       <group>
         <text term="accessed" text-case="lowercase" prefix="(" suffix=" "/>
         <date variable="accessed" suffix=")">
@@ -93,6 +101,7 @@
           <date-part name="day" form="numeric-leading-zeros"/>
         </date>
       </group>
+      -->
     </group>
   </macro>
   <macro name="page">
@@ -149,14 +158,14 @@
     <sort>
       <key variable="citation-number"/>
     </sort>
-    <layout suffix=".">
+    <layout>
       <!-- <text variable="citation-number" prefix="(" suffix=")"/> -->
       <text macro="author"/>
       <choose>
         <if type="article-journal">
           <group delimiter="">
             <group delimiter=": ">
-              <!-- <text variable="collection-title"/> -->
+              <text variable="collection-title"/>
               <text macro="title"/>
             </group>
             <text macro="translator" suffix=", "/>

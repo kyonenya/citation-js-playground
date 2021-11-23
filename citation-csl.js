@@ -19,6 +19,7 @@ EP  - 97
 SN  - 0289-825X
 Y1  - 2021
 PB  - 日本現象学会
+UR  - https://kyonenya.github.io/
 ER  -
 `);
 const result = example.format('bibliography', {

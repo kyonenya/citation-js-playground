@@ -20,10 +20,13 @@ Node.jsにおける文献管理
 
 ### CSL
 
-- [#Appendix CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables)
+- [Appendix CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables)
   - CSL-JSONのspec
-    - サブタイトルはないらしい、なくていい
-    - `original-`系が充実していて翻訳文献にも向いている
+  - サブタイトルはないらしい、なくていい
+  - `original-`系が充実していて翻訳文献にも向いている
+  - リンクは`URL`のみ
+  - ユーザー定義フィールドはない、雑記は`note`に書く
+    - noteにリンクとリンクテキストを書きたいときはマークダウン？
 - [CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html)
   - TODO: `name-as-sort-order`のところをよく読む
 - [schema/csl-data.json at v1.0.1 · citation-style-language/schema](https://github.com/citation-style-language/schema/blob/v1.0.1/csl-data.json)
