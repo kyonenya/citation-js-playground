@@ -1,4 +1,4 @@
-const Cite = require("citation-js");
+const Cite = require('citation-js');
 //const { read } = require('@customcommander/ris');
 
 const result = new Cite(`

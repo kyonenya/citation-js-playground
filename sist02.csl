@@ -274,7 +274,7 @@
           </group>
         </else>
       </choose>
-      <text macro="access" prefix=". "/>
+      <text macro="access"/>
     </layout>
   </bibliography>
 </style>

@@ -1,9 +1,9 @@
-const assert = require("assert");
-const { read } = require("@customcommander/ris");
-const { formatJpArticle } = require("./formatJp");
+const assert = require('assert');
+const { read } = require('@customcommander/ris');
+const { formatJpArticle } = require('./formatJp');
 
-describe("formatJpArticle", () => {
-  it("翻訳論文", () => {
+describe('formatJpArticle', () => {
+  it('翻訳論文', () => {
     const translation = read(`
 TY  - JOUR
 T1  - ウィトゲンシュタインは誰のための哲学者か
@@ -19,12 +19,12 @@ TA  - 吉田廉・京念屋隆史
 ER  -
 `)[0];
     assert.strictEqual(
-      formatJpArticle(translation).join(""),
-      "G・E・M・アンスコム「ウィトゲンシュタインは誰のための哲学者か」吉田廉・京念屋隆史訳, 『現代思想』50(2): pp. 89-97, 青土社, 2021"
+      formatJpArticle(translation).join(''),
+      'G・E・M・アンスコム「ウィトゲンシュタインは誰のための哲学者か」吉田廉・京念屋隆史訳, 『現代思想』50(2): pp. 89-97, 青土社, 2021'
     );
   });
 
-  it("論文", () => {
+  it('論文', () => {
     const article = read(`
 TY  - JOUR
 T1  - 考えるとき話しているのか
@@ -40,8 +40,8 @@ PB  - 日本現象学会
 ER  -
 `)[0];
     assert.strictEqual(
-      formatJpArticle(article).join(""),
-      "京念屋隆史「考えるとき話しているのか：フッサール「独白」概念をめぐって」『現象学年報』37: pp. 89-97, 日本現象学会, 2021"
+      formatJpArticle(article).join(''),
+      '京念屋隆史「考えるとき話しているのか：フッサール「独白」概念をめぐって」『現象学年報』37: pp. 89-97, 日本現象学会, 2021'
     );
   });
 });

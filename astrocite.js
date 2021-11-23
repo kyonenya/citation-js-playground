@@ -1,5 +1,5 @@
-const parse = require("astrocite-bibtex").parse;
-const parseRis = require("astrocite-ris").parse;
+const parse = require('astrocite-bibtex').parse;
+const parseRis = require('astrocite-ris').parse;
 
 const cslJson = parse(`
 @article{植村玄輝2007内世界的な出来事としての作用,

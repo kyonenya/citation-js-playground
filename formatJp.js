@@ -1,12 +1,12 @@
-const { read } = require("@customcommander/ris");
+const { read } = require('@customcommander/ris');
 
-const SEPARATOR = ", ";
+const SEPARATOR = ', ';
 
 function formatJpArticle(ris) {
   const fragments = [
     ris.A1[0].last_name,
-    [ris.T1[0] + (ris.T2 ? `：${ris.T2[0]}` : ""), (str) => `「${str}」`],
-    ris.TA ? `${ris.TA[0].last_name}訳${SEPARATOR}` : "",
+    [ris.T1[0] + (ris.T2 ? `：${ris.T2[0]}` : ''), (str) => `「${str}」`],
+    ris.TA ? `${ris.TA[0].last_name}訳${SEPARATOR}` : '',
     [ris.JO[0], (str) => `『${str}』`],
     `${ris.IS[0]}: pp. ${ris.SP[0]}-${ris.EP[0]}`,
     ris.PB[0],
