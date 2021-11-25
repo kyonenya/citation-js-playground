@@ -23,8 +23,6 @@ const citeproc = new CSL.Engine(sys, styleAsText, 'ja-JP');
 
 citeproc.setOutputFormat('text');
 
-sys.items = items;
-
 citeproc.updateItems(Object.keys(items));
 const bib = citeproc.makeBibliography();
 
