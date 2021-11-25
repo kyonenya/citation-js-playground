@@ -4,6 +4,14 @@ Node.jsにおける文献管理
 
 ## 参考
 
+### TypeScript対応
+
+- [csl-json - npm](https://www.npmjs.com/package/csl-json)
+  - CSL-JSONのTypeScript定義、astrociteの作者による
+  - 使用例: [astrocite/eutils.ts at master · dsifford/astrocite](https://github.com/dsifford/astrocite/blob/master/packages/astrocite-eutils/src/eutils.ts)
+- [astrocite/dates.ts at master · dsifford/astrocite](https://github.com/dsifford/astrocite/blob/master/packages/core/src/dates.ts)
+  - 日付のパース
+
 ### citeproc-js
 
 - [citeproc-js/citeproc-doc.rst at master · Juris-M/citeproc-js](https://github.com/Juris-M/citeproc-js/blob/master/attic/citeproc-doc.rst#processor-modes)
