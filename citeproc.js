@@ -28,4 +28,13 @@ const bib = citeproc.makeBibliography();
 
 //console.log(bib[1][0]);
 
-console.log(citeproc.registry.getSortedRegistryItems()[0].ref);
+//console.log(citeproc.registry.getSortedRegistryItems()[0].ref['event-date']);
+
+const date = citeproc.registry.getSortedRegistryItems()[0].ref['event-date'];
+const parser = CSL.DateParser;
+
+console.log(
+  parser.parseDateToObject('2021/3/12'),
+  parser.convertDateObjectToString({ year: 2021, month: 11 }),
+  parser.convertDateArrayToString([2021, 2, 2])
+)

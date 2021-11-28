@@ -4,16 +4,10 @@ Node.jsにおける文献管理
 
 ## 参考
 
-### TypeScript対応
-
-- [csl-json - npm](https://www.npmjs.com/package/csl-json)
-  - CSL-JSONのTypeScript定義、astrociteの作者による
-  - 使用例: [astrocite/eutils.ts at master · dsifford/astrocite](https://github.com/dsifford/astrocite/blob/master/packages/astrocite-eutils/src/eutils.ts)
-- [astrocite/dates.ts at master · dsifford/astrocite](https://github.com/dsifford/astrocite/blob/master/packages/core/src/dates.ts)
-  - 日付のパース
-
 ### citeproc-js
 
+- [citeproc-js/util_dateparser.js at master · Juris-M/citeproc-js](https://github.com/Juris-M/citeproc-js/blob/master/src/util_dateparser.js)
+  - DateParser
 - [citeproc-js/citeproc-doc.rst at master · Juris-M/citeproc-js](https://github.com/Juris-M/citeproc-js/blob/master/attic/citeproc-doc.rst#processor-modes)
   - こっちのドキュメントの方が見やすい
 - [citeproc-js-node - npm](https://www.npmjs.com/package/citeproc-js-node?activeTab=readme)
@@ -26,6 +20,11 @@ Node.jsにおける文献管理
 
 ### CSL-JSON
 
+- [csl-json - npm](https://www.npmjs.com/package/csl-json)
+  - CSL-JSONのTypeScript定義、astrociteの作者による
+  - 使用例: [astrocite/eutils.ts at master · dsifford/astrocite](https://github.com/dsifford/astrocite/blob/master/packages/astrocite-eutils/src/eutils.ts)
+- [astrocite/dates.ts at master · dsifford/astrocite](https://github.com/dsifford/astrocite/blob/master/packages/core/src/dates.ts)
+  - 日付のパース
 - [Appendix CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html#appendix-iv-variables)
   - CSL-JSONのspec
   - サブタイトルはないらしい、なくていい
