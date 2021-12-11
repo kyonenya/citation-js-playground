@@ -33,8 +33,8 @@ const bib = citeproc.makeBibliography();
 const date = citeproc.registry.getSortedRegistryItems()[0].ref['event-date'];
 const parser = CSL.DateParser;
 
+console.log(parser);
 console.log(
   parser.parseDateToObject('2021/3/12'),
   parser.convertDateObjectToString({ year: 2021, month: 11 }),
-  parser.convertDateArrayToString([2021, 2, 2])
 )

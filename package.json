@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "citation-csl": "node citation-csl.js",
+    "citation-plugin": "node citation-plugin.js",
     "astrocite": "node astrocite.js",
     "citeproc": "node citeproc.js",
     "test": "mocha *.test.js",
