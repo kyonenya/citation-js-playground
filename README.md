@@ -63,14 +63,7 @@ Node.jsにおける文献管理
 - [RIS (file format) - Wikipedia](https://en.wikipedia.org/wiki/RIS_(file_format))
 - [翻訳本をMendeleyで入力してBibTeXで使いたいから、Notesに原著情報書くことにした - Drafts](https://cm3.hateblo.jp/entry/2019/01/27/161741#fn-3e192f66)
 
-### その他
-
-- [dsifford/astrocite: Bibliography file format => AST => CSL JSON](https://github.com/dsifford/astrocite)
-  - 日本語著者名のパースに難あり
-
-## citation-jsの問題
-
-### TA（翻訳著者）のパース
+### RIS
 
 - TA（翻訳著者）がCSL-JSONにパースされない
   - もうRIS形式を正としてパースした方がいいか
@@ -81,3 +74,5 @@ Node.jsにおける文献管理
   - 案外CSLが使いやすいので、データの方も最初からCSLに寄せておけばいい
   - T2（サブタイトル）もCSL-JSONにすると欠落する、このように、変換はロスレスではない
   - ならciteproc-jsも使えるんじゃないか？ 要検討
+- [dsifford/astrocite: Bibliography file format => AST => CSL JSON](https://github.com/dsifford/astrocite)
+  - 日本語著者名のパースに難あり
