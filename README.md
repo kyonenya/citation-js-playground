@@ -37,6 +37,10 @@ Node.jsにおける文献管理
 
 ## CSL
 
+- [Types - CSL 1.0.2 Specification -- Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html#appendix-iii-types)
+  - 文献のタイプ一覧
+  - `article-magazine` はエッセイとかに使えそう
+  - `article` が何だかんだ雑多なカテゴリーに使えそうだしこれを翻訳文献に割り当てるか
 - [CSL 1.0.1 Specification — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/specification.html)
   - TODO: `name-as-sort-order`のところをよく読む
 - [Primer — An Introduction to CSL — Citation Style Language 1.0.1-dev documentation](https://docs.citationstyles.org/en/stable/primer.html)
